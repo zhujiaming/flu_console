@@ -32,8 +32,9 @@ class _MyAppState extends State<MyApp> {
 
     timer = Timer.periodic(const Duration(milliseconds: 500), (timer) {
       print("${(count++)}");
-      if(count == 20) {
+      if (count == 20) {
         timer.cancel();
+        throw Exception('test error');
       }
     });
   }
