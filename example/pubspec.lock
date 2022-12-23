@@ -50,20 +50,6 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.0.5"
-  dio:
-    dependency: transitive
-    description:
-      name: dio
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "4.0.6"
-  dio_log:
-    dependency: "direct main"
-    description:
-      name: dio_log
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "2.0.4"
   fake_async:
     dependency: transitive
     description:
@@ -95,13 +81,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  http_parser:
-    dependency: transitive
-    description:
-      name: http_parser
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "4.0.1"
   lints:
     dependency: transitive
     description:
@@ -110,7 +89,7 @@ packages:
     source: hosted
     version: "2.0.0"
   logger:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: logger
       url: "https://pub.flutter-io.cn"
@@ -198,13 +177,6 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.4.9"
-  typed_data:
-    dependency: transitive
-    description:
-      name: typed_data
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "1.3.1"
   vector_math:
     dependency: transitive
     description:
