@@ -4,7 +4,6 @@ import 'package:flu_console/src/eventbus.dart';
 import 'package:flu_console/src/message.dart';
 import 'package:flu_console/src/overlay_console_widget.dart';
 import 'package:flu_console/src/res.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -29,25 +28,19 @@ class FluConsole {
     _messages.clear();
   }
 
-  static void run<T>(
-    T Function() callback,
-  ) {
+  static void run<T>(T Function() callback, bool enableLog) {
     _messages = [];
     runZonedGuarded(() {
       callback();
     }, (error, stackTrace) {
-      if (kDebugMode) {
+      if (enableLog) {
         print('start print error stackTrace');
         print(error);
         print(stackTrace);
-        _addMessage(Message(
-            content: '${error.toString()}\n${stackTrace.toString()}',
-            messageType: MessageType.error,
-            time: DateTime.now()));
+        _addMessage(Message(content: '${error.toString()}\n${stackTrace.toString()}', messageType: MessageType.error, time: DateTime.now()));
       }
-    }, zoneSpecification: ZoneSpecification(
-        print: (Zone self, ZoneDelegate parent, Zone zone, String message) {
-      if (kDebugMode) {
+    }, zoneSpecification: ZoneSpecification(print: (Zone self, ZoneDelegate parent, Zone zone, String message) {
+      if (enableLog) {
         parent.print(zone, message);
         _addMessage(Message(content: message, time: DateTime.now()));
       }
@@ -65,8 +58,7 @@ class FluConsole {
     ///widget第一次渲染完成
     // WidgetsBinding.instance.addPostFrameCallback((_) {
     // print("show debug button run");
-    itemEntry =
-        OverlayEntry(builder: (BuildContext context) => const OverlayConsoleWidget());
+    itemEntry = OverlayEntry(builder: (BuildContext context) => const OverlayConsoleWidget());
     if (itemEntry != null) {
       // print("insert debug button run");
 
@@ -80,8 +72,7 @@ class FluConsole {
     return itemEntry != null;
   }
 
-  static showToast(BuildContext context, String message,
-      {Duration duration = const Duration(seconds: 2)}) {
+  static showToast(BuildContext context, String message, {Duration duration = const Duration(seconds: 2)}) {
     OverlayEntry overlayEntry = OverlayEntry(builder: (context) {
       return Positioned(
         top: MediaQuery.of(context).size.height * 0.8,
