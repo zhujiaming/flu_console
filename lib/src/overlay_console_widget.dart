@@ -43,7 +43,7 @@ class OverlayConsoleWidgetState extends State<OverlayConsoleWidget> {
     // screenHeight = MediaQuery.of(context).size.height;
 
     left = screenWidth - btnWidth;
-    top = screenHeight - btnHeight - 20;
+    top = screenHeight - btnHeight;
   }
 
   @override
@@ -52,7 +52,7 @@ class OverlayConsoleWidgetState extends State<OverlayConsoleWidget> {
       screenWidth = MediaQuery.of(context).size.width;
       screenHeight = MediaQuery.of(context).size.height;
       left = screenWidth - btnWidth;
-      top = screenHeight - btnHeight - 20;
+      top = screenHeight - btnHeight;
     }
 
     Widget w;
