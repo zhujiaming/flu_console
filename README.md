@@ -4,7 +4,8 @@ Display the flutter log on the app
 
 ## Getting Started
 
-    - step 1
+- step 1
+
 ```dart
 
     FluConsole.run(() {
@@ -17,7 +18,9 @@ Display the flutter log on the app
         runApp(const App());
     },enableLog: true);
 ```
-    - step 2
+
+- step 2
+
 ```dart
    
     FluConsole.showConsoleButton(context);
