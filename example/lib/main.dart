@@ -7,7 +7,7 @@ import 'package:flu_console/flu_console.dart';
 void main() {
   FluConsole.run(() {
     runApp(const App());
-  });
+  },enableLog: true);
 }
 
 class App extends StatelessWidget {
@@ -74,6 +74,7 @@ class _MyAppState extends State<HomePage> {
                     children: [
                       ElevatedButton(
                         onPressed: () {
+                          FluConsole.showConsoleButton(context);
                           FluConsole.showConsoleButton(context);
                         },
                         child: const Text("show log button"),
