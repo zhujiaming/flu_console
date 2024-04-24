@@ -28,7 +28,7 @@ class FluConsole {
     _messages.clear();
   }
 
-  static void run<T>(T Function() callback, bool enableLog) {
+  static void run<T>(T Function() callback, {bool enableLog = kDebugMode}) {
     _messages = [];
     runZonedGuarded(() {
       callback();

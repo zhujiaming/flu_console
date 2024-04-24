@@ -4,8 +4,9 @@ version '1.0-SNAPSHOT'
 buildscript {
     ext.kotlin_version = '1.6.10'
     repositories {
-        google()
-        mavenCentral()
+//        google()
+//        mavenCentral()
+        maven { url 'https://depend.iflytek.com/artifactory/mvn-repo/' }
     }
 
     dependencies {
@@ -16,8 +17,9 @@ buildscript {
 
 rootProject.allprojects {
     repositories {
-        google()
-        mavenCentral()
+//        google()
+//        mavenCentral()
+        maven { url 'https://depend.iflytek.com/artifactory/mvn-repo/' }
     }
 }
 

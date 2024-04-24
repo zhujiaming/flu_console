@@ -72,18 +72,19 @@ class _MyAppState extends State<HomePage> {
                 LayoutBuilder(builder: (ctx, constraints) {
                   return Row(
                     children: [
-                      MaterialButton(
+                      ElevatedButton(
                         onPressed: () {
                           FluConsole.showConsoleButton(context);
                         },
-                        child: const Text("显示日志开关"),
+                        child: const Text("show log button"),
                       ),
-                      MaterialButton(
+                      const SizedBox(width: 10),
+                      ElevatedButton(
                         onPressed: () {
                           Navigator.of(ctx)
                               .push(PageNavAnimBuilder(const LogPrintPanel()));
                         },
-                        child: const Text("打开日志"),
+                        child: const Text("open log"),
                       )
                     ],
                   );

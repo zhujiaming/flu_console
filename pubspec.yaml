@@ -1,6 +1,6 @@
 name: flu_console
 description: display the flutter print log on the app
-version: 0.0.1
+version: 1.0.0
 homepage: https://github.com/zhujiaming/flu_console
 
 environment:
