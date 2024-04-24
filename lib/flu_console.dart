@@ -55,15 +55,11 @@ class FluConsole {
   static showConsoleButton(BuildContext context) {
     dismissConsoleButton();
 
-    ///widget第一次渲染完成
     // WidgetsBinding.instance.addPostFrameCallback((_) {
     // print("show debug button run");
     itemEntry = OverlayEntry(builder: (BuildContext context) => const OverlayConsoleWidget());
     if (itemEntry != null) {
-      // print("insert debug button run");
-
-      ///显示悬浮menu
-      Overlay.of(context)?.insert(itemEntry!);
+      Overlay.of(context).insert(itemEntry!);
     }
     // });
   }
@@ -95,7 +91,7 @@ class FluConsole {
         ),
       );
     });
-    Overlay.of(context)?.insert(overlayEntry);
+    Overlay.of(context).insert(overlayEntry);
     Future.delayed(duration).then((value) {
       overlayEntry.remove();
     });

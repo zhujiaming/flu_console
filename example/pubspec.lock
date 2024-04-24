@@ -63,7 +63,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.0.2"
+    version: "1.0.0"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -98,14 +98,6 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.0.1"
-  logger:
-    dependency: transitive
-    description:
-      name: logger
-      sha256: "7ad7215c15420a102ec687bb320a7312afd449bac63bfb1c60d9787c27b9767f"
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "1.4.0"
   matcher:
     dependency: transitive
     description:
